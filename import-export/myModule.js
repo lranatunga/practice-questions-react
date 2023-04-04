@@ -1,14 +1,18 @@
 export function greet (name){
 
-    console.log(`Hello ${name}!`)
+    return `Hello ${name}!`
 };
 
-export
 
 
-
-
-
+ class Person {
+    constructor(name, age){
+        this.name=name;
+        this.age= age;
+    }
+}
+const person2 = new Person ('Kate', 30)
+export default Person;
 
 
 /**

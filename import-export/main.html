@@ -9,16 +9,42 @@
 <body>
     <script src="myModule.js" type="module"></script>
     <script src="math.js" type="'module"></script>
+    <script src="utils.js" type="'module"></script>
+    <script src="config.js" type ="module"></script>
     <script type="module">
         import {greet} from './myModule.js';
         import add from './math.js';
         import {subtract} from './math.js';
         import {getName} from './utils.js';
+        import {getAge} from './utils.js';
+        import {config} from './config.js';
+        import Person from './myModule.js'
+        import numberArray from './utils.js';
+        import {numberArrayOne} from './utils.js';
         
-        greet('Lakmali');
-        add(5,4)
-        subtract(10,3)
-        getName(person)
+        
+        console.log(greet('Lakmali'));
+
+        console.log(add(5,4))
+        
+        console.log(subtract(10,3))
+
+        console.log(config.port)
+        console.log(config.database)
+        console.log(config.apikey)
+
+        const person2 = new Person ('Kate', 30)
+        console.log(person2)
+
+        const user = {
+        name: 'Kate',
+        age: 18,
+}
+        console.log(getName(user))
+        console.log(getAge(user))
+
+        console.log(numberArrayOne())
+        console.log(numberArray ())
         </script>
 </body>
 </html>
