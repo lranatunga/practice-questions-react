@@ -44,7 +44,9 @@ function App() {
     <RoleNavigation role ='admin'/>
     <UserList users={users}/>
     <GreetLogin isLoggedIn={true}/>
-    <GreetLogin />
+    <GreetLogin isLoggedIn={false}/>
+    <GreetLogin isLoggedIn={true}/>
+    <GreetLogin isLoggedIn={false}/>
     </div>
   );
 }
