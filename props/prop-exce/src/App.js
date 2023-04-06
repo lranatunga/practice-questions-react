@@ -4,6 +4,7 @@ import UserInfo from './componenets/UserInfo';
 import Box from './componenets/Box';
 import GroceryList from './componenets/GroceryList';
 import {UserProfile} from './componenets/NestedComponents';
+import ReadableDate from './componenets/expresion';
 
 function App() {
   const groceryItems = ["Milk", "Eggs", "Bread", "Butter"];
@@ -45,6 +46,8 @@ function App() {
         city="Purley"
         country= 'United Kingdom'
       />
+
+      <ReadableDate />
     </div>
   );
 }
