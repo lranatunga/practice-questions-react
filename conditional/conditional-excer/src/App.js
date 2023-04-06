@@ -1,23 +1,50 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Greeting from './components/Greeting';
+import ToggleText from './components/ToggleText';
+import RoleNavigation from './components/RoleNavigation';
+import UserList from './components/UserList';
+import GreetLogin from './components/LoginGreet';
+
 
 function App() {
+
+  const displayText = true
+  let users = []
+  
+  // let users = [
+  //   {
+  //     name:'John',
+  //     userName: 'johnmax'
+  //   },
+
+  //   {
+  //     name:'Kate',
+  //     userName: 'katewilson'
+  //   },
+
+  //   {
+  //     name:'Bob',
+  //     userName: 'bobnov'
+  //   },
+
+  //   {
+  //    name:'Jack',
+  //    userName: 'jack123'
+  //   }
+  // ]
+
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Greeting />
+    { displayText === true? <ToggleText />: null}
+    <RoleNavigation role='user' />
+    <RoleNavigation role ='admin'/>
+    <UserList users={users}/>
+    <GreetLogin isLoggedIn={true}/>
+    <GreetLogin />
     </div>
   );
 }
