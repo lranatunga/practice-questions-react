@@ -3,6 +3,8 @@ import './App.css';
 import CounterState from './components/Counter';
 import TempertatureConverter from './components/Temperature';
 import TodoList from './components/TodoList';
+import ColourPicker from './components/Colorpicker';
+import DarkModeToggle from './components/DarkMode';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
      <CounterState />
      <TempertatureConverter/>
      <TodoList />
+     <ColourPicker />
+     <DarkModeToggle />
     </div>
   );
 }

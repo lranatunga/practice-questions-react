@@ -11,8 +11,10 @@ function TodoList (){
         setTaskList([...newTaskList])
     }
 
-    const deleteHandle = () =>{
-        
+    const deleteHandle = (index) =>{
+        const newTaskList = [...taskList];
+        newTaskList.splice(index, 1);
+        setTaskList(newTaskList);  
     }
     return (
         <div>
@@ -22,7 +24,7 @@ function TodoList (){
             />
             <button onClick={handleClick}>Add Task</button>
             {
-                taskList.map((task, index) => <div key={index}>{task} <button onClick={deleteHandle}>Delete Task</button></div> )
+                taskList.map((task, index) => <div key={index}>{task}{''} <button onClick={() => deleteHandle(index)}>Delete Task</button></div> )
                 
             }
             
