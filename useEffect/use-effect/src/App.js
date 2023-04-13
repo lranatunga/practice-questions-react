@@ -4,6 +4,7 @@ import './App.css';
 import { Counter } from './Components/Counter';
 import { CurrentTime } from './Components/Time';
 import {Timer} from './Components/Timer';
+import Counters from './Components/MultipleCounter';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
      <UserGreeting />
      <CurrentTime />
      <Timer />
+     <Counters />
     </div>
   );
 }
