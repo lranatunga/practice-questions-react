@@ -1,16 +1,18 @@
-import {BsCartFill} from 'react-icons/bs'
-import logo from './images/mologo.png'
+
+import logo from '../images/mologo.png'
+import CartCounter from './CartCounter'
 import MenuItems from './MenuItems'
 import Search from './Search.js'
 
-export default function Header (){
+export default function Header (props){
     return(
         <div style={{display:'flex', backgroundColor:'skyblue', width:'100%', height:"100px", justifyContent:'center'}}>
-        <img src={logo} alt="logo" style={{width:'100px', height:'75px', objectFit:'cover', margin:'15px'}}/>
+        <img src={logo} alt="logo" style={{width:'100px', height:'75px', objectFit:'cover', margin:'15px', borderRadius:'10px'}}/>
         <MenuItems />
         <Search />
-        <BsCartFill style={{width:'50px', height:'50px', scale:(0.8), padding:'20px'}} />
+        <CartCounter count={props.count}/>
         </div>
+        
     )
 
 }
