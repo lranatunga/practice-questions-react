@@ -21,7 +21,6 @@ const [cartCount, setCartCount] = useState(0)
      <CardContainer onAddToCart={() => setCartCount(cartCount + 1)}
                     title = {'Most Popular'} />
      <CardContainer title='All Products'
-                    products={allProducts}
                     onAddToCart={() => setCartCount(cartCount + 1)}
                      />
 

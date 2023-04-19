@@ -17,7 +17,7 @@ function CardContainer (props) {
             id={props.id}
             name= {props.name}
             image = {props.image}
-            description={props.descr}
+            description={props.descr.substring(0,100)}
             price= {props.price}
             rating = {props.rating}  
             onAddToCart={props.onAddToCart} />

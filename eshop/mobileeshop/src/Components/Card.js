@@ -3,13 +3,13 @@ function Card (props){
     return(
         <div className="product-card"  style={{display:'flex', 
                                                 flexDirection:'column',
-                                                width:'300px', 
-                                                height:'400px',
+                                                width:'400px', 
+                                                height:'500px',
                                                 margin:'20px',
                                                 borderRadius:'10px',
                                                 border:'1px solid gray'}}>
             <h4>{props.name}</h4>
-            <img src={props.image} style={{width:'150px', height:'250px', objectFit:'cover', transform:'scale(0.8)', alignSelf:'center'}}/>
+            <img src={props.image} style={{width:'150px', height:'250px', objectFit:'cover', alignSelf:'center'}} alt=""/>
             <p>{props.description}</p>
             <p>Price : {props.price}</p>
             <p>Average Rating : {props.rating}</p>
