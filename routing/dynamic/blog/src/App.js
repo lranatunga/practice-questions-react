@@ -13,7 +13,7 @@ function App() {
  <Routes>
   <Route exact path='/' element={<Home/>} />
   <Route exact path="/blog" element={<BlogList/>} />
-        <Route path="/blog/:postId" component={BlogPost} />
+        <Route path="/blog/:postId" component={<BlogPost/>} />
         <Route path="*" element={<NotFound/>} />
  </Routes>
  </BrowserRouter>
