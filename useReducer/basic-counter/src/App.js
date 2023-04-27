@@ -1,13 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
-import CounterContextFunction from './CounterContext';
-import Counters from './Counters'
+import TheamContextFunction from './TheamContext';
+import Main from './Main';
 
 function App() {
   return (
-    <CounterContextFunction>
-      <Counters />
-    </CounterContextFunction>
+    <TheamContextFunction>
+      <Main/>
+    </TheamContextFunction>
   );
 }
 

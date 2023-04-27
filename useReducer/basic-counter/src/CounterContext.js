@@ -5,6 +5,7 @@ export const CounterContext = createContext()
 function CounterContextFunction ({children}){
 
     const reducer = (state, action) => {
+        
         switch(action.type){
             case 'INCREASE':
                 return state + 1;

@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { CounterContext } from "./CounterContext";
 
 function Counter ({children}) {
-    const {counter, dispatch} = useContext(CounterContext)
-
+    let {counter, dispatch} = useContext(CounterContext)
+   
     return (
         <div>
             <h3>Counter:{counter}</h3>
