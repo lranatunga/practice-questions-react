@@ -2,40 +2,28 @@ import Header from './Components/Header';
 import './App.css';
 import { CardContainer } from "./Components/CardContainer";
 import { useState } from 'react';
-import { data } from './01-eshop-data';
+import Home from './Pages/Home';
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import ContactUs from './Pages/ContactUs';
+import AddNewProducts from './Pages/AddNewProducts';
 
 
 
-
-function App() {
-
-const [cartCount, setCartCount] = useState(0)
-
-
+export default function App() {
+  const [cartCount, setCartCount] = useState(0);
 
   return (
+    <BrowserRouter>
     <div className="App">
-     <Header count={cartCount}/>
-     <CardContainer onAddToCart={() => setCartCount(cartCount + 1)}
-                    title = {'Best Sellers'}  />
-     <CardContainer onAddToCart={() => setCartCount(cartCount + 1)}
-                    title = {'Most Popular'} />
-     <CardContainer title='All Products'
-                    onAddToCart={() => setCartCount(cartCount + 1)}
-                     />
-
+      <Header count={cartCount} />
+      <Routes>
+        <Route path='/' element={<Home  onAddToCart={() => setCartCount(cartCount + 1)}/>}/>
+        <Route path='/contact' element={<ContactUs/>}/>
+        <Route path='/addproduct' element={<AddNewProducts/>}/>
+      
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 
-export default App;
-
-
-// key = {props.id}
-// id={props.id}
-// name= {props.name}
-// image = {props.image}
-// description={props.descr}
-// price= {props.price}
-// rating = {props.rating}  
-// onAddToCart={props.onAddToCart}

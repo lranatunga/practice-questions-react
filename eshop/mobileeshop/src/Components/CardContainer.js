@@ -3,45 +3,73 @@ import {data} from '../01-eshop-data'
 
 function CardContainer (props) {
 
+  const bestSellers = data.filter((product) => product.rating > 4.5);
+  const mostPopular = data.filter((product) => product.reviews > 7000);
+
+
    
-    return (
-        <div className="card-container" style={{display:'flex', flexDirection:'column'}}>
-        <h2 style={{alignItems:'flex-start', alignSelf:'flex-start'}}>{props.title}</h2>
-        <div style={{display:'flex', flexDirection:'row' , overflowX:'auto'}}>
-       
-       { data.map((props) => {
-        return (
-        
-        <Card 
-            key = {props.id}
-            id={props.id}
-            name= {props.name}
-            image = {props.image}
-            description={props.descr.substring(0,100)}
-            price= {props.price}
-            rating = {props.rating}  
-            onAddToCart={props.onAddToCart} />
-            )
+   
+      return (
+        <>
+        <div className="card-container" style={{ display: "flex", flexDirection: "column" }}>
+          <h2 style={{ alignItems: "flex-start", alignSelf: "flex-start" }}>Best Sellers</h2>
+          <div style={{ display: "flex", flexDirection: "row", overflowX: "auto" }}>
+            {bestSellers.map((product) => {
+              return (
+                <Card
+                  key={product.id}
+                  id={product.id}
+                  name={product.name}
+                  image={product.image}
+                  description={product.descr.substring(0, 100)}
+                  price={product.price}
+                  rating={product.rating}
+                  onAddToCart={props.onAddToCart}
+                />
+              );
             })}
-
-        {/* {props.products.map((product) => {
-          return (
-            <Card
-              key={product.id}
-              id={product.id}
-              name={product.name}
-              image={product.image}
-              description={product.descr}
-              price={product.price}
-              rating={product.rating}
-              onAddToCart={props.onAddToCart}
-            />
-          )
-        })}          */}
-
+          </div>
         </div>
-        </div>
-    )
+            <div className="card-container" style={{ display: "flex", flexDirection: "column" }}>
+            <h2 style={{ alignItems: "flex-start", alignSelf: "flex-start" }}>Most Popular</h2>
+            <div style={{ display: "flex", flexDirection: "row", overflowX: "auto" }}>
+              {mostPopular.map((product) => {
+                return (
+                  <Card
+                    key={product.id}
+                    id={product.id}
+                    name={product.name}
+                    image={product.image}
+                    description={product.descr.substring(0, 100)}
+                    price={product.price}
+                    rating={product.rating}
+                    onAddToCart={() => props.onAddToCart()}
+                  />
+                );
+              })}
+            </div>
+          </div>
+              <div className="card-container" style={{ display: "flex", flexDirection: "column" }}>
+              <h2 style={{ alignItems: "flex-start", alignSelf: "flex-start" }}>All Products</h2>
+              <div style={{ display: "flex", flexDirection: "row", overflowX: "auto" }}>
+                {data.map((product) => {
+                  return (
+                    <Card
+                      key={product.id}
+                      id={product.id}
+                      name={product.name}
+                      image={product.image}
+                      description={product.descr.substring(0, 100)}
+                      price={product.price}
+                      rating={product.rating}
+                      onAddToCart={props.onAddToCart}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+            </>
+      );
 }
 
 export {CardContainer}
