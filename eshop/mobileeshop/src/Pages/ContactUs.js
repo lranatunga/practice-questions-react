@@ -1,13 +1,24 @@
 import { useState } from "react"
+import ModalWindow from "../Components/Modal"
 
 export default function ContactUs () {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState ('')
     const [subject, setSubject] = useState ('')
+    const [showModal, setShowModal] = useState (false)
 
-    const handleSubmit = () => {
-        alert (`Thank you ${name}`)
+    const handleSubmit = (e) => {
+        e.preventDefault ()
+        setShowModal(true)
+       
+    }
+
+    const handleCloseModal = () =>{
+        setShowModal(false)
+        setEmail('')
+        setName('')
+        setSubject('')
     }
 
 
@@ -36,6 +47,12 @@ export default function ContactUs () {
                 </div>
                 <button onClick={handleSubmit}>Send</button>
             </form>
+            {/* { showModal && */}
+            <ModalWindow name={name}
+                         subject={subject}
+                         onClose={handleCloseModal}
+                         show={showModal}/>
+                         {/* } */}
         </div>
     )
 }
